@@ -1,0 +1,11 @@
+INSERT INTO shops VALUES (1,"asd");
+INSERT INTO MkM VALUES (1,1);
+INSERT INTO products VALUES (1,"mon-fri");
+INSERT INTO purches VALUES (1,3);
+INSERT INTO street VALUES (1,1,"gffd");
+
+INSERT INTO shops VALUES (2,"asssd");
+INSERT INTO MkM VALUES (2,2);
+INSERT INTO products VALUES (2,"mon-friiiii");
+INSERT INTO purches VALUES (2,30);
+INSERT INTO street VALUES (2,2,"qwegffd");

@@ -1,0 +1,60 @@
+CREATE DATABASE kek228;
+\c kek228;
+
+CREATE TABLE MkM
+(
+	id_shop              INTEGER NOT NULL,
+	id_product           INTEGER NOT NULL
+);
+
+ALTER TABLE MkM
+ADD PRIMARY KEY (id_shop,id_product);
+
+CREATE TABLE products
+(
+	id_product           INTEGER NOT NULL,
+	product_name         VARCHAR(100) NULL
+);
+
+ALTER TABLE products
+ADD PRIMARY KEY (id_product);
+
+CREATE TABLE purches
+(
+	cost                 INTEGER NOT NULL,
+	id_product           INTEGER NOT NULL
+);
+
+ALTER TABLE purches
+ADD PRIMARY KEY (id_product);
+
+CREATE TABLE Shops
+(
+	id_shop              INTEGER NOT NULL,
+	shop_name            VARCHAR(20) NULL
+);
+
+ALTER TABLE Shops
+ADD PRIMARY KEY (id_shop);
+
+CREATE TABLE street
+(
+	id_street            INTEGER NOT NULL,
+	street_name          VARCHAR(200) NULL,
+	id_shop              INTEGER NOT NULL
+);
+
+ALTER TABLE street
+ADD PRIMARY KEY (id_street,id_shop);
+
+ALTER TABLE MkM
+ADD CONSTRAINT R_2 FOREIGN KEY (id_shop) REFERENCES Shops (id_shop);
+
+ALTER TABLE MkM
+ADD CONSTRAINT R_3 FOREIGN KEY (id_product) REFERENCES products (id_product);
+
+ALTER TABLE purches
+ADD CONSTRAINT R_5 FOREIGN KEY (id_product) REFERENCES products (id_product);
+
+ALTER TABLE street
+ADD CONSTRAINT R_6 FOREIGN KEY (id_shop) REFERENCES Shops (id_shop);
